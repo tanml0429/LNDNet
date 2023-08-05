@@ -55,6 +55,7 @@ class SEModule(nn.Module):
 
 # 自己加的融合模块
 class Fusion(nn.Module):
+    """Recovery Block"""
     def __init__(self):
         super().__init__()
         self.conv1 = nn.Conv2d(1, 3, 3, 1, 1)
