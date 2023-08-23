@@ -466,7 +466,7 @@ def train(hyp,  # path/to/hyp.yaml or hyp dictionary
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', type=str, default=ROOT / 'yolov5s.pt', help='initial weights path')
-    parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
+    parser.add_argument('--cfg', type=str, default=ROOT /'models/yolov5s_modified.yaml', help='model.yaml path')
     parser.add_argument('--data', type=str, default=ROOT / 'data/lymph_mixed.yaml', help='dataset.yaml path')
     parser.add_argument('--hyp', type=str, default=ROOT / 'data/hyps/hyp.scratch-low.yaml', help='hyperparameters path')  # low 对应于yolov5s
     parser.add_argument('--epochs', type=int, default=300)
@@ -605,8 +605,8 @@ def main(opt, callbacks=Callbacks()):
                     # x = x[random.randint(0, n - 1)]  # random selection
                     x = x[random.choices(range(n), weights=w)[0]]  # weighted selection
                 elif parent == 'weighted':
-                    x = (x * w.reshape(n, 1)).sum(0) / w.sum()  # weighted combination
-
+                    x = (x * w.reshape(n, 1)).sum(0) / w.sum()  # weighted combination、
+                    
                 # Mutate
                 mp, s = 0.8, 0.2  # mutation probability, sigma
                 npr = np.random

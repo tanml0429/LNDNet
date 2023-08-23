@@ -9,5 +9,6 @@ tqdm
 matplotlib
 pandas
 seaborn
+tensorboard
 # torch>=1.7.0  # 查看pytorch官网查看安装命令
 

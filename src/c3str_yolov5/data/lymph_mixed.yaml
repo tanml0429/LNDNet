@@ -13,14 +13,20 @@ download: ~
 #train: ./lymph_mixed_dataset/images/train/  # 900 images
 #val: ./lymph_mixed_dataset/images/val/  # 100 images
 #test: ./lymph_mixed_dataset/images/val/  # 128 images
-train: ['./dataset_unpair/images/train/CDFI', './dataset_unpair/images/train/US']  # 993+1268=2261
-val: ['./dataset_unpair/images/val/CDFI', './dataset_unpair/images/val/US']  # 500+630=1130
-test: ['./dataset_unpair/images/test/CDFI', './dataset_unpair/images/test/US']  # 500+630=1130
+# train: ['./dataset_unpair/images/train/CDFI', './dataset_unpair/images/train/US']  # 993+1268=2261
+# val: ['./dataset_unpair/images/val/CDFI', './dataset_unpair/images/val/US']  # 500+630=1130
+# test: ['./dataset_unpair/images/test/CDFI', './dataset_unpair/images/test/US']  # 500+630=1130
+
+train: ["/data/tml/LNDNet/ln_dataset/images/train/CDFI", "/data/tml/LNDNet/ln_dataset/images/train/US"]  # 993+1268=2261
+val: ["/data/tml/LNDNet/ln_dataset/images/val/CDFI", "/data/tml/LNDNet/ln_dataset/images/val/US"]  # 500+630=1130
+test: ["/data/tml/LNDNet/ln_dataset/images/test/CDFI", "/data/tml/LNDNet/ln_dataset/images/test/US"]  # 500+630=1130
+
 # number of classes
-nc: 1
+nc: 3
 
 # class names 训练集数量分别是735  1298  246  173
 #names: ['lymph node','blood flow', 'hilum', 'calcification']  # 删除了4个'space-occupying lesion'和 1个'colliquative necrosis'
 #names: ['lymph_node', 'peripheral_blood_flow', 'eccentric_blood_flow', 'central_blood_flow', 'unknown_blood_flow',
 #    'hilum', 'liquefactive_necrosis', 'space_occupying_lesion', 'calcification']
-names: ['lymph_node']
+# names: ['lymph_node']
+names: ['metastatic', 'inflammatory', 'normal']  # t: 3036   i: 1762   n: 763
